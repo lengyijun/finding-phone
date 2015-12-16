@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:padding="10dp"
-            android:text="这是消息界面"
+            android:text="这是欢迎界面"
             android:textSize="20sp" />
     </LinearLayout>
 

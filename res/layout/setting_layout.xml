@@ -9,19 +9,6 @@
     tools:context=".MainActivity" >
 
     <EditText
-        android:id="@+id/et_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="78dp"
-        android:drawableRight="@drawable/ic_launcher"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +25,36 @@
         android:layout_alignLeft="@+id/editText1"
         android:layout_below="@+id/editText1"
         android:layout_marginTop="62dp"
-        android:text="Button" />
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_test"
+        android:layout_toLeftOf="@+id/button1"
+        android:text="请点击图标选择问题" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_alignParentLeft="true"
+        android:text="你的答案" />
+
+    <EditText
+        android:id="@+id/et_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:drawableRight="@drawable/ic_launcher"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>
 

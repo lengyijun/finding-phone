@@ -28,7 +28,7 @@
         android:layout_alignLeft="@+id/button1"
         android:layout_alignParentTop="true"
         android:layout_marginTop="68dp"
-        android:text="TextView" />
+        android:text="新建问题"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -37,7 +37,7 @@
         android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="37dp"
-        android:text="TextView" />
+        android:text="你的答案" />
 
     <EditText
         android:id="@+id/editText2"

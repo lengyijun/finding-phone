@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="消息"
+                    android:text="欢迎界面"
                     android:textColor="#82858b" />
             </LinearLayout>
         </RelativeLayout>
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="联系人"
+                    android:text="使用方法"
                     android:textColor="#82858b" />
             </LinearLayout>
         </RelativeLayout>
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="动态"
+                    android:text="新建问题"
                     android:textColor="#82858b" />
             </LinearLayout>
         </RelativeLayout>
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="设置"
+                    android:text="修改答案"
                     android:textColor="#82858b" />
             </LinearLayout>
         </RelativeLayout>
