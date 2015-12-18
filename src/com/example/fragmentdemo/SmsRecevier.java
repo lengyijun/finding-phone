@@ -42,17 +42,7 @@ import java.util.regex.*;
 
 	
       String regEx="123"; 
-      String wipe="wipe";
-      String lock="lock";
-      String identify="answer";
-      String reboot="reboot";
-    
       Pattern p_regEx=Pattern.compile(regEx);
-	  Pattern p_wipe=Pattern.compile(wipe);
-	  Pattern p_lock=Pattern.compile(lock);
-	  Pattern p_inditify=Pattern.compile(identify);
-	  Pattern p_reboot=Pattern.compile(reboot);
-	  
 	  
       public SmsRecevier() {
           Log.v("TAG", "SmsRecevier create");
@@ -91,18 +81,11 @@ import java.util.regex.*;
                  }
                  
 //                  以下用正则表达式做匹配
-
                Matcher m_regEx=p_regEx.matcher(content);
-               Matcher m_wipe=p_wipe.matcher(content);
-               Matcher m_lock=p_lock.matcher(content);
-               Matcher m_reboot=p_reboot.matcher(content);
 
 //				find是部分匹配
 //               matches是完全匹配
                boolean result_regEx=m_regEx.matches();  
-               boolean result_wipe=m_wipe.find();  
-               boolean result_lock=m_lock.find();  
-               boolean result_reboot=m_reboot.matches();
                
               if(result_regEx){
             	  
@@ -112,10 +95,9 @@ import java.util.regex.*;
 	        c=db.query("main_tb",null,null,null,null,null,null);
 	        int count=(int) (c.getCount()*Math.random());
 	        
-
 	        c.moveToFirst();
 	        c.move(count);
-	        db_ques=c.getString(1);
+	        db_ques=c.getString(1); // 注意是1和2，不是0和1,sqlite的特点
 	        db_answ=c.getString(2);
 	       
 	        sp=context.getSharedPreferences("answer", context.MODE_MULTI_PROCESS);
@@ -145,16 +127,9 @@ import java.util.regex.*;
             	  
                 }
 
-              if(result_reboot){
-//            	  收到reboot的指令，清除数据，重新开始监听短信
-            		Intent intent_jump=new Intent(context, MainActivity.class);
-            		context.startActivity(intent_jump);
-            		context.unregisterReceiver(this);
-              }
-              
               if(result_db_answ!=null&&result_db_answ){
         SmsManager smsManager = SmsManager.getDefault();// 发信息时需要的
-		smsManager.sendTextMessage(sender, null, "welcome ,please make your requset", null,null); 
+		smsManager.sendTextMessage(sender, null, "welcome ,please make your requset from SmsRecevier", null,null); 
             	  
               }
              }

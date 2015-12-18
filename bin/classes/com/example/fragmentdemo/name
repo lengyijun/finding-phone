@@ -1,0 +1,18 @@
+MainActivity.java
+SmsRecevier.java  在 MainActivity.java中被启动，监听短信。收到123时，从问题苦衷随机挑一个问题发送给对方，并且启动 SmsRecevier_check.java，把答案用getSharedPreferences共享给他,判断答案正确由SmsRecevier_check判断。
+
+ContactsFragment.java
+MessageFragment.java
+SettingFragment.java
+NewsFragment.java
+
+MyAdmin.java    锁屏所必须的类
+DBopenhelper.java 数据库的初始化的类
+
+SmsRecevier_check.java 监听短信时候是答案。如果正确的话回复right，并启动identify这个broadcastreceiver
+Text.java 是一个activity。如果收到music短消息，就播放默认的音乐。如果收到四个连续数字，就设为锁屏密码
+Identify.java 在smsreceiver中被调用,打开text这个activity，并发接收到的有效信息用intent发给text。锁屏，放音乐这些操作放在activity中进行比较好。
+
+
+
+control_service.java 不知道有什么用，暂时删掉了（逃:

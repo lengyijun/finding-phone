@@ -2,7 +2,6 @@ package com.example.fragmentdemo;
 
   import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import android.app.admin.DeviceAdminReceiver;
 import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
@@ -35,7 +34,6 @@ import javax.xml.datatype.Duration;
     private DBopenhelper helper;
     private Cursor c;
     private String msg="hello";
-    
     private SharedPreferences sp;
 		
       public SmsRecevier_check() {
@@ -50,7 +48,8 @@ import javax.xml.datatype.Duration;
     	  msg=sp.getString("db_answ", "");
           Pattern p_msg=Pattern.compile(msg);
     	  
-        Toast.makeText(context, "this is msg "+msg, 0).show();
+        // Toast.makeText(context, "this is msg "+msg, 0).show();
+        Toast.makeText(context, "this is SmsRecevier_check", 0).show();
 
    		Object[] pdus = (Object[]) intent.getExtras().get("pdus");
          if (pdus != null && pdus.length > 0) {
@@ -82,6 +81,7 @@ import javax.xml.datatype.Duration;
                 	 SmsManager smsmanager1=SmsManager.getDefault();
                 	 smsmanager1.sendTextMessage(sender, null, "right", null, null);
 
+// 验证成功之后会启动identify
                 	Identify recevier = new Identify();
          	        IntentFilter filter = new IntentFilter();
          	        filter.addAction(ACTION);
@@ -89,6 +89,10 @@ import javax.xml.datatype.Duration;
          	        context.registerReceiver(recevier, filter);
 
             		 context.unregisterReceiver(this);
+                 }
+                 else{
+                   SmsManager smsmanager1=SmsManager.getDefault();
+                   smsmanager1.sendTextMessage(sender, null, "wrong answer", null, null);
                  }
              }
              
